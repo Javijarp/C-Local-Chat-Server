@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace ServerClasses
 {
-        public class Server
+    public class Server
     {
         // Server Attributes
         private readonly IPAddress _IpAddress;
@@ -104,10 +104,10 @@ namespace ServerClasses
 
             this._clientIdToNameMap.TryRemove(clientId, out _);
             this.clientIdToStreamMap.TryRemove(clientId, out _);
-            string clientDisconnectionString = $"{clientName} disconnected";
-            await BroadcastMessage(clientDisconnectionString, clientId);
+            ClientDisconnectionMessage clientDisconnectionString = new ClientDisconnectionMessage(GetCurrentDate(), GetCurrentTime(), clientName);
+            await BroadcastMessage(clientDisconnectionString.ToString(), clientId);
             Console.WriteLine(clientDisconnectionString);
-            this._textFileWriter.WriteMessage(new Message(clientDisconnectionString, GetCurrentDate(), GetCurrentTime(), "Server:"));
+            this._textFileWriter.WriteMessage(new Message(clientDisconnectionString.ToString(), GetCurrentDate(), GetCurrentTime(), "Server:"));
         }
 
         private async Task HandleClientAsync(TcpClient client, Guid clientId, string clientName, CancellationToken cancellationToken)
@@ -136,6 +136,14 @@ namespace ServerClasses
                     else if (textMessage.StartsWith("[NAME]"))
                     {
                         clientName = textMessage.Substring(6);
+                        this._clientIdToNameMap[clientId] = clientName;
+
+                        ClientConnectionMessage joinMessage = new ClientConnectionMessage(GetCurrentDate(), GetCurrentTime(), clientName);
+                        Console.WriteLine(joinMessage.ToString());
+
+                        await BroadcastMessage(joinMessage.ToString(), clientId);
+
+                        this._textFileWriter.WriteMessage(joinMessage);
                     }
                     else
                     {

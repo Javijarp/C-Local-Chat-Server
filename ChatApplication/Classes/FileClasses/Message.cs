@@ -1,15 +1,24 @@
+using System.Runtime.InteropServices.Marshalling;
+
 namespace FileClasses
 {
     public class Message
     {
-        private readonly string message;
-        private readonly DateOnly date;
-        private readonly TimeOnly time;
-        private readonly string emitter;
+        protected string message;
+        protected DateOnly date;
+        protected TimeOnly time;
+        protected string emitter;
 
         public Message(string message, DateOnly date, TimeOnly time, string emitter)
         {
             this.message = message;
+            this.date = date;
+            this.time = time;
+            this.emitter = emitter;
+        }
+
+        public Message(DateOnly date, TimeOnly time, string emitter)
+        {
             this.date = date;
             this.time = time;
             this.emitter = emitter;
@@ -21,8 +30,8 @@ namespace FileClasses
         }
 
         public string GetMessage() => this.message;
-        public DateOnly Date => this.date;
-        public TimeOnly Time => this.time;
+        public DateOnly GetDate() => this.date;
+        public TimeOnly GetTime() => this.time;
         public string GetEmitter() => this.emitter;
     }
 }
