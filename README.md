@@ -14,16 +14,20 @@ Para correr el programa en la terminal:
 Run `dotnet run --project 'ChatApplication\ChatApplication.csproj'`
 
 El Programa comienza con esta pregunta:
-![Starting Question]()<br /> <br />
+![Starting Question](https://raw.githubusercontent.com/Javijarp/C-Local-Chat-Server/main/Pictures/Starting%20Question.png)<br /> <br />
 **Host**: Indica que el server comenzara en [LocalHost:6000](http://LocalHost:6000) (127.0.0.1:6000) <br /> <br />
-
+![Host](https://raw.githubusercontent.com/Javijarp/C-Local-Chat-Server/main/Pictures/Host.png) <br /> <br />
 
 **Join**: Revisa si hay un servidor abierto en [LocalHost:6000](http://LocalHost:6000) (127.0.0.1:6000) y si lo hay, se une.<br /> <br />
+![Client Connection](https://raw.githubusercontent.com/Javijarp/C-Local-Chat-Server/main/Pictures/Client%20Connection.png) <br /> <br />
 
 Se pueden unir tantos clientes como quieran y pueden tener el mismo nombre.
 
 ## TextFile Generation
 
-Al comenzar un sevidor, se comenzara a generar un .txt file con la fecha y hora en la que comenzo el server en un folder llamado Logs. <br />
+Al comenzar un sevidor, se comenzara a generar un .txt file con la fecha y hora en la que comenzo el server.
+![Creating Text File](https://raw.githubusercontent.com/Javijarp/C-Local-Chat-Server/main/Pictures/Creating%20Text%20File.png)<br /> <br />
 
+Los Message Logs se encuentran dentro del proyecto en un folder llamados Logs. <br />
+![File Created](https://raw.githubusercontent.com/Javijarp/C-Local-Chat-Server/main/Pictures/File%20Created.png)<br /> <br />
 Aqui estaran todos los mensajes de esa session.
