@@ -1,44 +1,5 @@
-﻿// using ServerClasses;
-// using AppClasses;
-
-// App app;
-// string clientName = "";
-
-// string question = "Do you want to host or not? (y/n)";
-// Console.WriteLine(question);
-
-// string answer = Console.ReadLine().ToLower();
-// bool host;
-// while (answer != "y" && answer != "n")
-// {
-//     Console.WriteLine("That is not an option. Try again");
-//     Console.WriteLine(question);
-//     answer = Console.ReadLine().ToLower();
-// }
-
-// switch (answer)
-// {
-//     case "y":
-//     host = true;
-//     break;
-//     default:
-//     host = false;
-//     Console.Write("Username: ");
-//     clientName = Console.ReadLine();
-//     break;
-// }
-
-// if (host == true){
-//     Console.WriteLine("Starting server at localhost:6000...");
-//     app = new App(host, "127.0.0.1", 6000);
-// } else if (host == false) {
-//     Console.WriteLine("Connecting to localHost:6000...");
-//     app = new App(clientName);
-//     app.Connect("127.0.0.1", 6000);
-// }
-
-using System;
-using ServerClasses; // Assuming the Server class is within this namespace
+﻿using System;
+using ServerClasses;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
@@ -52,7 +13,7 @@ namespace ChatApplication
             string choice = Console.ReadLine().Trim().ToLower();
 
             const string ipAddress = "127.0.0.1";
-            const int port = 12345;
+            const int port = 6000;
 
             if (choice == "host")
             {
