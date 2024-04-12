@@ -7,7 +7,7 @@ El proyecto consiste en una aplicación de consola que pueda host localmente un 
 
 ## Video Explicacion
 
-[![Video Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=QqKp_a3uj2g)
+[![Video Link](https://img.youtube.com/vi/QqKp_a3uj2g/0.jpg)](https://www.youtube.com/watch?v=QqKp_a3uj2g)
 
 ## How To Run:
 ### Before Running:
