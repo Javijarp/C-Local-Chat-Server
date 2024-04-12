@@ -5,6 +5,10 @@ Este es un proyecto final para la clase de Programacion I.
 ## ABOUT:
 El proyecto consiste en una aplicación de consola que pueda host localmente un servidor que reciba conexiones y mensajes. Estos mensajes son, transmitidos a todas sus demás conexiones.
 
+## Video Explicacion
+
+<iframe width="560" height="315" src="https://youtu.be/QqKp_a3uj2g" frameborder="0" allowfullscreen></iframe>
+
 ## How To Run:
 ### Before Running:
 Es recomendado tener múltiples terminales abiertas. Ya que, este requiere una para correr el servidor y las demás para las conexiones al servidor.
